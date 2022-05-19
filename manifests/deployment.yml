@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: shelkedockersamplenginx 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shelkedockersamplenginx
+  template:
+    metadata:
+      labels:
+        app: shelkedockersamplenginx 
+    spec:
+      containers:
+        - name: shelkedockersamplenginx 
+          image: dockeraz.azurecr.io/shelkedockersamplenginx
+          ports:
+          - containerPort: 80
